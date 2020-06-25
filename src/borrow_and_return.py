@@ -23,7 +23,9 @@ def register():
         SQL = 'SELECT * FROM external_staff WHERE ID_number=%s;'
         data = [ID_number]
         result = cursor.execute(SQL, data)
-        if (result == 0):
+        if (result != 0):
+            return internal, ID_number
+        else:
             deposit = input('按Y键交押金,按N键不交\n>')
             while (deposit != 'y' and deposit != 'Y'):
                 deposit = input('未交押金,请按Y键交押金\n>')
