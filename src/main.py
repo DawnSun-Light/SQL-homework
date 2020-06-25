@@ -36,8 +36,6 @@ def index():
 
 
 def book_manage():
-    print('罗东旭-18180100109')
-    print('图书馆借还书系统')
     print('图书管理')
     print('1.插入图书信息')
     print('2.删除图书信息')
@@ -46,19 +44,27 @@ def book_manage():
     function = input('请选择您要使用的功能,或按N键返回\n>')
     if(function == '1'):
         os.system('cls')
+        print('插入图书信息')
         book.insert()
+        print('插入成功')
         book_manage()
     elif(function == '2'):
         os.system('cls')
+        print('删除图书信息')
         book.delete()
+        print('删除成功')
         book_manage()
     elif(function == '3'):
         os.system('cls')
+        print('修改图书信息')
         book.update()
+        print('修改成功')
         book_manage()
     elif(function == '4'):
         os.system('cls')
+        print('查询图书信息')
         book.select()
+        print('查询结束')
         book_manage()
     elif(function == 'n' or function == 'N'):
         os.system('cls')
@@ -70,8 +76,6 @@ def book_manage():
 
 
 def staff_manage():
-    print('罗东旭-18180100109')
-    print('图书馆借还书系统')
     print('人员管理')
     print('1.插入内部人员信息')
     print('2.删除内部人员信息')
@@ -79,15 +83,21 @@ def staff_manage():
     function = input('请选择您要使用的功能,或按N键返回\n>')
     if(function == '1'):
         os.system('cls')
+        print('插入内部人员信息')
         staff.insert()
+        print('插入成功')
         staff_manage()
     elif(function == '2'):
         os.system('cls')
+        print('删除内部人员信息')
         staff.delete()
+        print('删除成功')
         staff_manage()
     elif(function == '3'):
         os.system('cls')
+        print('登记外部人员信息')
         borrow_and_return.register()
+        print('登记成功')
         staff_manage()
     elif(function == 'n' or function == 'N'):
         os.system('cls')
@@ -99,29 +109,29 @@ def staff_manage():
 
 
 def borrow_book():
-    print('罗东旭-18180100109')
-    print('图书馆借还书系统')
     print('借书')
-    function = input('按任意键借书,按N键返回\n>')
+    function = input('按Y键借书,按N键返回\n>')
     if(function == 'n' or function == 'N'):
         os.system('cls')
         index()
     else:
         os.system('cls')
+        print('借书')
         borrow_and_return.borrow()
+        index()
 
 
 def return_book():
-    print('罗东旭-18180100109')
-    print('图书馆借还书系统')
     print('还书')
-    function = input('按任意键还书,按N键返回\n>')
+    function = input('按Y键还书,按N键返回\n>')
     if(function == 'n' or function == 'N'):
         os.system('cls')
         index()
     else:
         os.system('cls')
+        print('还书')
         borrow_and_return.back()
+        index()
 
 
 index()

@@ -18,25 +18,26 @@ def register():
     result = cursor.execute(SQL, data)
     if (result != 0):
         internal = True
+        return internal, ID_number
     else:
         SQL = 'SELECT * FROM external_staff WHERE ID_number=%s;'
         data = [ID_number]
         result = cursor.execute(SQL, data)
         if (result == 0):
-            deposit = input('押金:')
-            if (deposit != '1'):
-                return -1
-            else:
-                SQL = 'INSERT INTO external_staff (ID_number,full_name) VALUES (%s,%s)'
-                data = [ID_number, full_name]
-                cursor.execute(SQL, data)
+            deposit = input('按Y键交押金,按N键不交\n>')
+            while (deposit != 'y' and deposit != 'Y'):
+                deposit = input('未交押金,请按Y键交押金\n>')
+                if (deposit == 'y' or deposit == 'Y'):
+                    print('已交押金')
+                    SQL = 'INSERT INTO external_staff (ID_number,full_name) VALUES (%s,%s)'
+                    data = [ID_number, full_name]
+                    cursor.execute(SQL, data)
 
-    conn.commit()
+                    conn.commit()
 
-    cursor.close()
-    conn.close()
-
-    return internal, ID_number
+                    cursor.close()
+                    conn.close()
+                    return internal, ID_number
 
 
 def borrow():

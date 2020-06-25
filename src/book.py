@@ -70,7 +70,7 @@ def delete():
 
 
 def select():
-    info = input('info:')
+    info = input('请查询任意信息:')
 
     conn = pymysql.connect(host="192.168.1.104", port=3305, user="root",
                            password="123456", database="library", charset="utf8")
