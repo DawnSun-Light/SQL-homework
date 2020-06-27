@@ -4,7 +4,7 @@
 
 Python 3.X
 
-PyMySql
+PyMySQL
 
 ## 部署步骤
 
@@ -12,7 +12,7 @@ PyMySql
 
 - https://www.python.org/downloads/release/python-383/
 
-2. 安装 PyMySql
+2. 安装 PyMySQL
 
 ```shell
 pip install pymysql
