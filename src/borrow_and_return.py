@@ -143,7 +143,7 @@ def back():
         # 外部人员3元/天
         if internal == False:
             fine = overdue * 3
-        print(f'超期{overdue}天,罚金{fine}元:')
+        print(f'超期{overdue}天,罚金{fine}元')
         # 登记到借书记录
         SQL = 'UPDATE borrowing SET fine=%s WHERE ISBN=%s AND ID_number=%s;'
         data = [fine, ISBN, ID_number]
