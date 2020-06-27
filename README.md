@@ -14,8 +14,12 @@ PyMySql
 
 2. 安装 PyMySql
 
-`pip install pymysql`
+```shell
+pip install pymysql
+```
 
 ### 运行
 
-`python app.py`
+```shell
+python app.py
+```
