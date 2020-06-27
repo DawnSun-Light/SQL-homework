@@ -68,16 +68,28 @@ def register():
             return internal, ID_number
         else:
             deposit = input('按Y键交押金,按N键不交\n>')
-            while (deposit != 'y' and deposit != 'Y'):
-                deposit = input('未交押金,请按Y键交押金\n>')
-                if (deposit == 'y' or deposit == 'Y'):
-                    print('已交押金')
-                    SQL = 'INSERT INTO external_staff (ID_number,full_name) VALUES (%s,%s)'
-                    data = [ID_number, full_name]
-                    cursor.execute(SQL, data)
+            if (deposit == 'y' or deposit == 'Y'):
+                print('已交押金')
+                SQL = 'INSERT INTO external_staff (ID_number,full_name) VALUES (%s,%s)'
+                data = [ID_number, full_name]
+                cursor.execute(SQL, data)
 
-                    conn.commit()
+                conn.commit()
 
-                    cursor.close()
-                    conn.close()
-                    return internal, ID_number
+                cursor.close()
+                conn.close()
+                return internal, ID_number
+            elif (deposit == 'n' or deposit == 'N'):
+                while (deposit != 'y' and deposit != 'Y'):
+                    deposit = input('未交押金,请按Y键交押金\n>')
+                    if (deposit == 'y' or deposit == 'Y'):
+                        print('已交押金')
+                        SQL = 'INSERT INTO external_staff (ID_number,full_name) VALUES (%s,%s)'
+                        data = [ID_number, full_name]
+                        cursor.execute(SQL, data)
+
+                        conn.commit()
+
+                        cursor.close()
+                        conn.close()
+                        return internal, ID_number
