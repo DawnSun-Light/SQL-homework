@@ -124,19 +124,19 @@ def borrow_return_book():
         print('借书')
         borrow_and_return.borrow()
         print('借书成功')
-        index()
+        borrow_return_book()
     elif function == '2':
         os.system('cls')
         print('还书')
         borrow_and_return.back()
         print('还书成功')
-        index()
+        borrow_return_book()
     elif function == '3':
         os.system('cls')
         print('查询借书记录')
         borrow_and_return.select()
         print('查询成功')
-        index()    
+        borrow_return_book()    
     elif function == 'n' or function == 'N':
         os.system('cls')
         index()
