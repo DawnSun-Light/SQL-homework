@@ -136,7 +136,7 @@ def borrow_return_book():
         print('查询借书记录')
         borrow_and_return.select()
         print('查询成功')
-        borrow_return_book()    
+        borrow_return_book()
     elif function == 'n' or function == 'N':
         os.system('cls')
         index()
