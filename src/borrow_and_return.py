@@ -57,7 +57,7 @@ def borrow():
 
         result = cursor.fetchone()
         # 内部人员限制为5本
-        if result >= 5:
+        if result[-1] >= 5:
             print('您的借书限制为5本')
             return
     else:
@@ -68,7 +68,7 @@ def borrow():
 
         result = cursor.fetchone()
         # 外部人员限制为2本
-        if result >= 2:
+        if result[-1] >= 2:
             print('您的借书限制为2本')
             return
     # 借书
