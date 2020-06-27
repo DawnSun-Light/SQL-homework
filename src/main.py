@@ -92,7 +92,7 @@ def staff_manage():
     elif(function == '3'):
         os.system('cls')
         print('登记外部人员信息')
-        borrow_and_return.register()
+        staff.register()
         print('登记成功')
         staff_manage()
     elif(function == 'n' or function == 'N'):
