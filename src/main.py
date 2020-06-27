@@ -11,8 +11,7 @@ def index():
     print('图书馆借还书系统')
     print('1.图书管理')
     print('2.人员管理')
-    print('3.借书')
-    print('4.还书')
+    print('3.借还书')
     function = input('请选择您要使用的功能,或按N键退出系统\n>')
     if(function == '1'):
         os.system('cls')
@@ -22,10 +21,7 @@ def index():
         staff_manage()
     elif(function == '3'):
         os.system('cls')
-        borrow_book()
-    elif(function == '4'):
-        os.system('cls')
-        return_book()
+        borrow_return_book()
     elif(function == 'n' or function == 'N'):
         os.system('cls')
         print('您已退出系统')
@@ -108,30 +104,30 @@ def staff_manage():
         staff_manage()
 
 
-def borrow_book():
-    print('借书')
-    function = input('按Y键借书,按N键返回\n>')
-    if(function == 'n' or function == 'N'):
-        os.system('cls')
-        index()
-    else:
+def borrow_return_book():
+    print('借还书')
+    print('1.借书')
+    print('2.还书')
+    function = input('请选择您要使用的功能,或按N键返回\n>')
+    if (function == '1'):
         os.system('cls')
         print('借书')
         borrow_and_return.borrow()
+        print('借书成功')
         index()
-
-
-def return_book():
-    print('还书')
-    function = input('按Y键还书,按N键返回\n>')
-    if(function == 'n' or function == 'N'):
+    elif (function == '2'):
+        os.system('cls')
+        print('还书')
+        borrow_and_return.back()
+        print('还书成功')
+        index()
+    elif(function == 'n' or function == 'N'):
         os.system('cls')
         index()
     else:
         os.system('cls')
-        print('还书')
-        borrow_and_return.back()
-        index()
+        print('您的输入有误')
+        borrow_return_book()
 
 
 index()
