@@ -2,6 +2,29 @@ import pymysql
 import staff
 
 
+# 查询借书记录
+def select():
+    ID_number = staff.register()[-1]
+
+    conn = pymysql.connect(host="192.168.1.104", port=3305, user="root",
+                           password="123456", database="library", charset="utf8")
+
+    cursor = conn.cursor()
+
+    SQL = 'SELECT * FROM borrowing WHERE ID_number=%s;'
+    data = [ID_number]
+
+    cursor.execute(SQL, data)
+
+    results = cursor.fetchall()
+    for result in results:
+        print(result)
+
+    cursor.close()
+
+    conn.close()
+
+
 # 借书
 def borrow():
     # 登记

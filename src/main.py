@@ -13,7 +13,7 @@ def index():
     print('图书馆借还书系统')
     print('1.图书管理')
     print('2.人员管理')
-    print('3.借还书')
+    print('3.图书借还')
 
     function = input('请选择您要使用的功能,或按N键退出系统\n>')
     if function == '1':
@@ -111,11 +111,12 @@ def staff_manage():
         staff_manage()
 
 
-# 借还书页
+# 图书借还页
 def borrow_return_book():
-    print('借还书')
+    print('图书借还')
     print('1.借书')
     print('2.还书')
+    print('3.查询借书记录')
 
     function = input('请选择您要使用的功能,或按N键返回\n>')
     if function == '1':
@@ -130,6 +131,12 @@ def borrow_return_book():
         borrow_and_return.back()
         print('还书成功')
         index()
+    elif function == '3':
+        os.system('cls')
+        print('查询借书记录')
+        borrow_and_return.select()
+        print('查询成功')
+        index()    
     elif function == 'n' or function == 'N':
         os.system('cls')
         index()
