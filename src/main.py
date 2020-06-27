@@ -5,13 +5,16 @@ import borrow_and_return
 import os
 
 
+# 主页
 def index():
-    os.system('cls')
+    os.system('cls')    # 清屏
+
     print('罗东旭-18180100109')
     print('图书馆借还书系统')
     print('1.图书管理')
     print('2.人员管理')
     print('3.借还书')
+
     function = input('请选择您要使用的功能,或按N键退出系统\n>')
     if(function == '1'):
         os.system('cls')
@@ -31,12 +34,14 @@ def index():
         index()
 
 
+# 图书管理页
 def book_manage():
     print('图书管理')
     print('1.插入图书信息')
     print('2.删除图书信息')
     print('3.修改图书信息')
     print('4.查询图书信息')
+
     function = input('请选择您要使用的功能,或按N键返回\n>')
     if(function == '1'):
         os.system('cls')
@@ -71,11 +76,13 @@ def book_manage():
         book_manage()
 
 
+# 人员管理页
 def staff_manage():
     print('人员管理')
     print('1.插入内部人员信息')
     print('2.删除内部人员信息')
     print('3.登记外部人员信息')
+
     function = input('请选择您要使用的功能,或按N键返回\n>')
     if(function == '1'):
         os.system('cls')
@@ -104,10 +111,12 @@ def staff_manage():
         staff_manage()
 
 
+# 借还书页
 def borrow_return_book():
     print('借还书')
     print('1.借书')
     print('2.还书')
+    
     function = input('请选择您要使用的功能,或按N键返回\n>')
     if (function == '1'):
         os.system('cls')
