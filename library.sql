@@ -45,4 +45,3 @@ CREATE TABLE IF NOT EXISTS external_staff (
     number_of_books_borrowed INT DEFAULT 0,
     overdue INT DEFAULT 0
 );
-
